@@ -53,6 +53,8 @@ public class SecurityConfig {
                         .requestMatchers("/api/auth/**").permitAll()
                         .requestMatchers("/api/users/me").authenticated()
                         .requestMatchers("/api/protected/**").authenticated()
+                        .requestMatchers("/api/food-items/**").authenticated()
+                        .anyRequest().authenticated()
                 )
                 // 5. Use our UserDetailsService
                 .userDetailsService(userDetailsService)
